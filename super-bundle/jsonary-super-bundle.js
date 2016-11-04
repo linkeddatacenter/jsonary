@@ -1853,7 +1853,7 @@
 					var callback = this.callbacks.shift();
 					this.depth++;
 					callback();
-					this.depth--
+					this.depth--;
 				}
 			},
 			add: function (callback) {
@@ -1896,6 +1896,7 @@
 			var encType = params.encType;
 			
 			var xhr = new XMLHttpRequest();
+			xhr.withCredentials = true;
 			xhr.onreadystatechange = function () {
 				if (xhr.readyState == 4) {
 					if (xhr.status >= 200 && xhr.status < 300) {
