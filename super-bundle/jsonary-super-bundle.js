@@ -795,7 +795,7 @@
 		};
 		Uri.parse = function(uri) {
 			return new Uri(uri);
-		}
+		};
 		
 		function unpackQuery(queryString) {
 			var parts = queryString.split("&");
@@ -1737,7 +1737,7 @@
 					var result = resultObj[key] = thisResultCollector.result.apply(this, arguments);
 					thisResultCollector.whenDone(df);
 					return result;
-				}
+				};
 			};
 		}
 		ResultCollector.prototype = {
@@ -2064,7 +2064,7 @@
 			toString: function () {
 				return "[Jsonary Request]";
 			}
-		}
+		};
 		
 		function requestJson(url, method, data, encType, cacheFunction, hintSchema, oldHeaders) {
 			var headers = {};
@@ -2164,7 +2164,7 @@
 		};
 		publicApi.isRequest = function (obj) {
 			return (obj instanceof Request) || (obj instanceof FragmentRequest);
-		}
+		};
 		
 		function HttpError (code) {
 			this.httpCode = code;
@@ -2207,7 +2207,7 @@
 					delete thisRequest.document.whenStable;
 					makeRequest();
 					return thisRequest.document.whenStable(callback);
-				}
+				};
 			};
 		}
 		Request.prototype = {
@@ -2428,7 +2428,7 @@
 					var encodedData = xhrUrl.substring(firstPart.length + 1);
 					firstPart = firstPart.substring(5); // remove "data:"
 					var dataParams = firstPart.split(';');
-					var dataType = dataParams[0]
+					var dataType = dataParams[0];
 					var base64 = dataParams.indexOf('base64') !== -1;
 					var resHeaders = "Content-Type: " + dataType.replace(/\s/g, '');
 					var error = null, decodedData;
@@ -2801,14 +2801,14 @@
 				while (accessCallbacks.length) {
 					accessCallbacks.shift().call(this);
 				}
-			}
+			};
 			this.whenAccessed = function (callback) {
 				if (publicApi.config.accessImmediately) {
 					callback.call(this);
 				} else {
 					accessCallbacks.push(callback);
 				}
-			}
+			};
 		
 			this.setRaw = function (value) {
 				var needsFakePatch = this.raw.defined();
@@ -2883,7 +2883,7 @@
 					}
 				}
 				return result;
-			}
+			};
 			
 			var baseUrl = (this.url || '').split('#')[0];
 			var fragmentMap = {};
@@ -2943,9 +2943,9 @@
 				callback.call(this, this);
 				return this;
 			}
-		}
+		};
 		
-		var INDEX_REGEX = /^(0|[1-9]\d*)$/
+		var INDEX_REGEX = /^(0|[1-9]\d*)$/;
 		function isIndex(value) {
 			return INDEX_REGEX.test(value);
 		}
@@ -3002,7 +3002,7 @@
 					}
 				}
 				return indexData[index];
-			}
+			};
 			
 			this.parent = function() {
 				return parent;
@@ -3640,7 +3640,7 @@
 			return {
 				document: this.document.deflate(),
 				path: this.pointerPath()
-			}
+			};
 		};
 		Document.prototype.deflate = function (canUseUrl) {
 			if (this.isDefinitive) {
@@ -3661,7 +3661,7 @@
 				value: rawData.value(),
 				schemas: schemas,
 				root: this.rootPath()
-			}
+			};
 			return result;
 		};
 		publicApi.inflate = function (deflated, callback) {
@@ -4433,11 +4433,11 @@
 			if (rawLink.method != undefined) {
 				this.method = rawLink.method;
 			} else if (rawLink.rel == "edit") {
-				this.method = "PUT"
+				this.method = "PUT";
 			} else if (rawLink.rel == "create") {
-				this.method = "POST"
+				this.method = "POST";
 			} else if (rawLink.rel == "delete") {
-				this.method = "DELETE"
+				this.method = "DELETE";
 			} else {
 				this.method = "GET";
 			}
@@ -5652,7 +5652,7 @@
 				}
 				this.readOnly = function () {
 					return readOnly;
-				}
+				};
 				return readOnly;
 			},
 			enumDataList: function () {
@@ -5844,7 +5844,7 @@
 							} else {
 								callback(value);
 							}
-						}, ignoreChoices, ignoreDefaults, true)
+						}, ignoreChoices, ignoreDefaults, true);
 						return;
 					}
 					var value = this.createValue(origValue, callback, ignoreChoices, ignoreDefaults, true);
@@ -6142,7 +6142,7 @@
 					}
 				}
 				var minLength = this.minLength();
-				var maxLength = this.maxLength()
+				var maxLength = this.maxLength();
 				var patterns = this.patterns();
 				if (maxLength != null && minLength > maxLength) {
 					return undefined;
@@ -6557,7 +6557,7 @@
 		var customValueCreationFunctions = [];
 		publicApi.extendCreateValue = function (creationFunction) {
 			customValueCreationFunctions.push(creationFunction);
-		}
+		};
 		
 		publicApi.createSchemaList = function (schemas) {
 			if (!Array.isArray(schemas)) {
@@ -7279,7 +7279,7 @@
 			antiCacheUrls: false,
 			accessImmediately: false,
 			debug: false
-		}
+		};
 	
 	/**** _footer.js ****/
 	
@@ -8150,7 +8150,7 @@
 					var elementId = element;
 					element = render.getElementById(elementId);
 					if (!element) {
-						throw new Error('Element not found: ' + elementId)
+						throw new Error('Element not found: ' + elementId);
 					}
 				}
 				pageContext.enhanceElement(element);
@@ -8270,7 +8270,7 @@
 				}
 				stored = JSON.parse(stored);
 				return Jsonary.inflate(stored.data);
-			}
+			};
 		
 			var rendererIdCounter = 0;
 			
@@ -8311,7 +8311,7 @@
 						} else if (typeof sourceObj.action['_super'] === 'function') {
 							return sourceObj.action['_super'].apply(this, arguments);
 						}
-					}
+					};
 				} else {
 					this.actionFunction = sourceObj.action;
 				}
@@ -8563,7 +8563,7 @@
 					return [
 						uiState,
 						subStates
-					]
+					];
 				},
 				loadStateData: function (savedState) {
 					if (!savedState || typeof savedState != "string") {
@@ -8584,7 +8584,7 @@
 					}
 					return data;
 				}
-			}
+			};
 			Renderer.prototype.super_ = Renderer.prototype;
 		
 			var rendererLookup = {};
@@ -8683,7 +8683,7 @@
 						documentList.splice(index, 1);
 					}
 					return this;
-				}
+				};
 				render.getElementById = function (id) {
 					for (var i = 0; i < documentList.length; i++) {
 						var element = documentList[i].getElementById(id);
@@ -8762,14 +8762,14 @@
 						jQueryObj.render = function (element, data) {
 							var query = $(element);
 							oldRender.call(this, query, data);
-						}
+						};
 					}
 					if (jQueryObj.update != undefined) {
 						var oldUpdate = jQueryObj.update;
 						jQueryObj.update = function (element, data, operation) {
 							var query = $(element);
 							oldUpdate.call(this, query, data, operation);
-						}
+						};
 					}
 					render.register(jQueryObj);
 				};
@@ -9261,7 +9261,7 @@
 						var parts = savedState['link'].split("-");
 						uiState.submitLink = parseInt(parts.shift()) || 0;
 						if (parseInt(parts.shift())) {
-							uiState.editInPlace = true
+							uiState.editInPlace = true;
 						}
 						uiState.submissionData = this.loadStateData(parts.join("-"));
 						delete savedState['link'];
@@ -9503,7 +9503,7 @@
 									context.uiState.xorSelected[i] = j;
 									selected = " selected";
 								}
-								result += '<option value="' + j + '"' + selected + '>' + schema.forceTitle() + '</option>'
+								result += '<option value="' + j + '"' + selected + '>' + schema.forceTitle() + '</option>';
 							}
 							result += '</select>';
 						}
@@ -9525,7 +9525,7 @@
 									context.uiState.xorSelected[i] = j;
 									selected = " selected";
 								}
-								result += '<option value="' + j + '"' + selected + '>' + schema.title() + '</option>'
+								result += '<option value="' + j + '"' + selected + '>' + schema.title() + '</option>';
 							}
 							result += '</select>';
 						}
@@ -9544,7 +9544,7 @@
 								} else {
 									context.uiState.orSelected[i][j] = false;
 								}
-								result += '<option value="' + j + '"' + selected + '>' + schema.title() + '</option>'
+								result += '<option value="' + j + '"' + selected + '>' + schema.title() + '</option>';
 							}
 							result += '</select>';
 						}
@@ -9577,7 +9577,7 @@
 					data.setValue(newSchemas.createValue(oldValue));
 					newSchemas.createValue(oldValue, function (value) {
 						data.setValue(value);
-					})
+					});
 				},
 				action: function (context, actionName, value, arg1) {
 					if (actionName == "closeDialog") {
@@ -9703,7 +9703,7 @@
 						}
 						result += '<td class="json-object-value">' + context.renderHtml(subData) + '</td>';
 						result += '</tr>';
-					}
+					};
 					if (!data.readOnly()) {
 						var schemas = data.schemas();
 						var knownProperties = schemas.knownProperties();
@@ -10071,7 +10071,7 @@
 							data.setValue(value);
 						}
 					} else if (actionName == "input") {
-						var newValueString = arg1
+						var newValueString = arg1;
 						var value = parseFloat(newValueString);
 						if (!isNaN(value)) {
 							if (interval != undefined) {
@@ -10137,7 +10137,7 @@
 					select.onchange = function () {
 						var index = this.value;
 						data.setValue(enumValues[index]);
-					}
+					};
 					element.appendChild(select);
 					element = select = option = null;
 				},
@@ -10298,7 +10298,7 @@
 					changeListeners[i].call(api, api, api.query);
 				}
 			}
-		}
+		};
 	
 		var ignoreUpdate = false;
 		var lastHref = null;
@@ -10347,7 +10347,7 @@
 				result.query = Jsonary.create({});
 			}
 			return result;
-		}
+		};
 		
 		function updateLocation(notify) {
 			start();
@@ -10558,7 +10558,7 @@
 						}
 						return result;
 					}
-				}
+				};
 				var onLoadListener = function (evt) {
 					evt = evt || window.event;
 					for (var i = 0; i < setupFunctions.length; i++) {
@@ -10911,7 +10911,7 @@
 				return function (data, context) {
 					var string = "" + data.propertyValue(path);
 					return string.replace("&", "&amp;").replace("<", "&lt;").replace(">", "gt;").replace('"', "&quot;").replace("'", "&#39;");
-				}
+				};
 			}
 		};
 		
@@ -10986,7 +10986,7 @@
 				renderHtml = renderHtml || config.defaultCellRenderHtml;
 				config.cellRenderHtml[key] = thisRenderer.wrapCellFunction(config, renderHtml, key);
 				return this;
-			}
+			};
 			
 			this.component = config.component;
 		};
@@ -11003,14 +11003,14 @@
 				return function (cellData, context) {
 					var titleContext = context;
 					return original.call(functionThis, cellData, titleContext, columnKey);
-				}
+				};
 			},
 			wrapCellFunction: function (functionThis, original, columnKey) {
 				var thisRenderer = this;
 				return function (cellData, context) {
 					var cellContext = thisRenderer.cellContext(cellData, context, columnKey);
 					return original.call(functionThis, cellData, cellContext, columnKey);
-				}
+				};
 			},
 			action: function (context, actionName) {
 				var thisRenderer = this;
@@ -11527,7 +11527,7 @@
 					if (rowsPerPageOptions.length > 1) {
 						context.uiState.rowsPerPage = context.uiState.rowsPerPage || rowsPerPageOptions[0];
 						result += ', <select name="' + context.inputNameForAction('rowsPerPage') + '">';
-						rowsPerPageOptions.sort(function (a, b) {return a - b});
+						rowsPerPageOptions.sort(function (a, b) {return a - b;});
 						for (var i = 0; i < rowsPerPageOptions.length; i++) {
 							if (rowsPerPageOptions[i] === rowsPerPageOptions[i - 1]) {
 								continue;
@@ -11658,7 +11658,7 @@
 					} else {
 						return TableRenderer.defaults.defaultTitleHtml.call(this, data, context, columnKey);
 					}
-					return result + '</th>'
+					return result + '</th>';
 				}
 				return TableRenderer.defaults.defaultTitleHtml.call(this, data, context, columnKey);
 			},
