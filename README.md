@@ -1,7 +1,7 @@
 # Jsonary linkeddata.center release
 
 This is simplified fork of  [jsonary release repo](https://github.com/jsonary-js/jsonary-release). 
-It supports CORS withCredentials for basic http Auuthentication suppot
+It supports CORS withCredentials for basic http Authentication suppot
 
 See [changelog] (CHANGELOG.md) for a list of applied changes.
 
