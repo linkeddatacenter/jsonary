@@ -13,5 +13,6 @@ First release.
 - removed not essential files
 - added CORS basic autentication support
 - renamed example.json in home.json
+- added favico.ico
 
 [Unreleased]: https://github.com/e-artspace/pimple-env-provider/compare/1.0.0...HEAD
