@@ -5,6 +5,8 @@ It supports CORS withCredentials for basic http Auuthentication suppot
 
 See [changelog] (CHANGELOG.md) for a list of applied changes.
 
+This repo is hosted as gitub pages as [https://jsonary.linkeddata.center](/https://jsonary.linkeddata.center/)
+
 ###  What is Jsonary?
 
 Jsonary is a library for dealing with data and APIs that are described by JSON (Hyper-)Schema.  It can find and fetch schemas referenced from HTTP headers, allowing you to use the API in a flexible way.

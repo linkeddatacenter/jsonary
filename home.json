@@ -1,7 +1,7 @@
 {
 	"title": "Welcome to Jsonary for LinkedData:Center",
 	"content": [
-		"This is a starting document for the demo JSON browser packaged with Jsonary.",
+		"This is a starting document for the JSON browser packaged with Jsonary.",
 		"Type the URL of your JSON API into the bar at the top to see your own data displayed here.  As you document your API using JSON Hyper-Schema, this page will become a fully adaptive client for your API."
 	]
 }

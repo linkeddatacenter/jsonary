@@ -4,15 +4,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## 1.0.0 2016-11-04
-
-First release. 
+## 1.0.0 2016-11-04 
 
 ### Changed
 
+- forked from https://github.com/jsonary-js/jsonary-release
 - removed not essential files
 - added CORS basic autentication support
 - renamed example.json in home.json
 - added favico.ico
-
-[Unreleased]: https://github.com/e-artspace/pimple-env-provider/compare/1.0.0...HEAD
+- published as gitub pages
