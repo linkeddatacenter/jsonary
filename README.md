@@ -5,7 +5,7 @@ It supports CORS withCredentials for basic http Authentication suppot
 
 See [changelog] (CHANGELOG.md) for a list of applied changes.
 
-This repo is hosted as gitub pages as [https://jsonary.linkeddata.center](/https://jsonary.linkeddata.center/)
+This repo is hosted as gitub pages as [https://jsonary.linkeddata.center](https://jsonary.linkeddata.center/)
 
 ###  What is Jsonary?
 
